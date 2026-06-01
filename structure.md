@@ -18,56 +18,63 @@ Makefile                     # Короткие команды: make up, make ba
 README.md                    # Быстрый старт и описание проекта
 STRUCTURE.md                 # Этот файл
 
-services/                    # Конфигурация каждого сервиса
-    gitea/                   # Git-хостинг
-        app.ini              # Конфиг Gitea
-    woodpecker/              # CI/CD
+services/
+
+    gitea/
+        app.ini              # Конфиг Gitea (домен, БД, отключение регистрации)
+
+    woodpecker/
         server/              # Конфиг сервера Woodpecker
         agent/               # Конфиг раннера Woodpecker
-    mattermost/              # Чат команды
-        config.json          # Конфиг Mattermost
+
+    mattermost/
+        config.json          # Преднастроенный конфиг Mattermost
         plugins/             # Предустановленные плагины
-    syncthing/               # P2P-синхронизация файлов
-        config.xml           # Конфиг Syncthing
-    ntfy/                    # Push-уведомления
-        server.yml           # Конфиг ntfy
-    uptime-kuma/             # Мониторинг
-        Dockerfile           # Кастомный образ
-    admin-panel/             # Веб-админка Grapple
+
+    syncthing/
+        config.xml           # Базовая конфигурация Syncthing
+
+    ntfy/
+        server.yml           # Конфиг ntfy (запрет анонимного доступа)
+
+    uptime-kuma/
+        Dockerfile           # Кастомный образ при необходимости
+
+    admin-panel/
         Dockerfile
         requirements.txt     # Python-зависимости
         src/
-            app.py           # Точка входа
-            templates/       # HTML-шаблоны
+            app.py           # Точка входа (Flask/FastAPI)
+            templates/       # HTML-шаблоны админки
             static/          # CSS, JS, логотип
 
-nginx/                       # Обратный прокси
+nginx/
     Dockerfile
     nginx.conf               # Основной конфиг nginx
-    sites/                   # Конфиги виртуальных хостов
+    sites/
         gitea.conf           # /git → Gitea
         woodpecker.conf      # /ci → Woodpecker
         mattermost.conf      # /chat → Mattermost
         uptime.conf          # /status → Uptime Kuma
         admin.conf           # /admin → Admin Panel
 
-scripts/                     # Утилиты управления
+scripts/
     setup.sh                 # Первичная настройка с нуля
-    backup.sh                # Локальный бэкап данных
+    backup.sh                # Локальный бэкап всех данных
     restore.sh               # Восстановление из бэкапа
-    healthcheck.sh           # Проверка сервисов
+    healthcheck.sh           # Проверка работоспособности сервисов
 
-docs/                        # Документация
+docs/
     images/                  # Скриншоты и фото
-    SETUP.md                 # Инструкция по развёртыванию
-    MIGRATION.md             # Миграция с GitHub/GitLab
-    FAQ.md                   # Частые вопросы
+    SETUP.md                 # Подробная инструкция по развёртыванию
+    MIGRATION.md             # Как мигрировать с GitHub/GitLab
+    FAQ.md                   # Частые вопросы и ответы
 
-data/                        # Данные сервисов (.gitignore)
+data/
     postgres/                # Базы данных
-    gitea/                   # Репозитории Gitea
+    gitea/                   # Репозитории и настройки Gitea
     woodpecker/              # Состояние CI/CD
-    mattermost/              # Файлы Mattermost
-    syncthing/               # Индекс Syncthing
-    ntfy/                    # Кэш ntfy
+    mattermost/              # Файлы и сообщения Mattermost
+    syncthing/               # Индекс и состояние Syncthing
+    ntfy/                    # Кэш и база ntfy
     uptime-kuma/             # Данные мониторинга
