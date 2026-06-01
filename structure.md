@@ -9,21 +9,21 @@
 
 ---
 
-.env.example                 # Шаблон переменных окружения (пароли, ключи, домены)
+    .env.example                 # Шаблон переменных окружения (пароли, ключи, домены)
 
-.env                         # Реальные переменные (не коммитить)
+    .env                         # Реальные переменные (не коммитить)
 
-.gitignore                   # Исключаем .env, data/, бекапы
+    .gitignore                   # Исключаем .env, data/, бекапы
 
-docker-compose.yml           # Оркестратор всех сервисов
+    docker-compose.yml           # Оркестратор всех сервисов
 
-docker-compose.dev.yml       # Версия для разработки
+    docker-compose.dev.yml       # Версия для разработки
 
-Makefile                     # Короткие команды: make up, make backup, make health
+    Makefile                     # Короткие команды: make up, make backup, make health
 
-README.md                    # Быстрый старт и описание проекта
+    README.md                    # Быстрый старт и описание проекта
 
-STRUCTURE.md                 # Этот файл
+    STRUCTURE.md                 # Этот файл
 
 
 services/
