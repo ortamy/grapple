@@ -56,33 +56,33 @@ services/
             templates/       # HTML-шаблоны админки
             static/          # CSS, JS, логотип
 
-nginx/
-    Dockerfile
-    nginx.conf               # Основной конфиг nginx
-    sites/
-        gitea.conf           # /git → Gitea
-        woodpecker.conf      # /ci → Woodpecker
-        mattermost.conf      # /chat → Mattermost
-        uptime.conf          # /status → Uptime Kuma
-        admin.conf           # /admin → Admin Panel
+    nginx/
+        Dockerfile
+        nginx.conf               # Основной конфиг nginx
+        sites/
+            gitea.conf           # /git → Gitea
+            woodpecker.conf      # /ci → Woodpecker
+            mattermost.conf      # /chat → Mattermost
+            uptime.conf          # /status → Uptime Kuma
+            admin.conf           # /admin → Admin Panel
 
-scripts/
-    setup.sh                 # Первичная настройка с нуля
-    backup.sh                # Локальный бэкап всех данных
-    restore.sh               # Восстановление из бэкапа
-    healthcheck.sh           # Проверка работоспособности сервисов
+    scripts/
+        setup.sh                 # Первичная настройка с нуля
+        backup.sh                # Локальный бэкап всех данных
+        restore.sh               # Восстановление из бэкапа
+        healthcheck.sh           # Проверка работоспособности сервисов
 
-docs/
-    images/                  # Скриншоты и фото
-    SETUP.md                 # Подробная инструкция по развёртыванию
-    MIGRATION.md             # Как мигрировать с GitHub/GitLab
-    FAQ.md                   # Частые вопросы и ответы
+    docs/
+        images/                  # Скриншоты и фото
+        SETUP.md                 # Подробная инструкция по развёртыванию
+        MIGRATION.md             # Как мигрировать с GitHub/GitLab
+        FAQ.md                   # Частые вопросы и ответы
 
-data/
-    postgres/                # Базы данных
-    gitea/                   # Репозитории и настройки Gitea
-    woodpecker/              # Состояние CI/CD
-    mattermost/              # Файлы и сообщения Mattermost
-    syncthing/               # Индекс и состояние Syncthing
-    ntfy/                    # Кэш и база ntfy
-    uptime-kuma/             # Данные мониторинга
+    data/
+        postgres/                # Базы данных
+        gitea/                   # Репозитории и настройки Gitea
+        woodpecker/              # Состояние CI/CD
+        mattermost/              # Файлы и сообщения Mattermost
+        syncthing/               # Индекс и состояние Syncthing
+        ntfy/                    # Кэш и база ntfy
+        uptime-kuma/             # Данные мониторинга
